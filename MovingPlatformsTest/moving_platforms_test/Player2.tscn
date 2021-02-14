@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://moving_platforms_test/Player2.gd" type="Script" id=1]
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 0.17
+height = 0.25
+
+[sub_resource type="CapsuleShape" id=2]
+radius = 0.17
+height = 0.11
+
+[sub_resource type="CubeMesh" id=3]
+size = Vector3( 0.25, 0.575, 0.25 )
+
+[node name="Player" type="KinematicBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00314447, 0 )
+script = ExtResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0.365925, 0 )
+shape = SubResource( 1 )
+
+[node name="DuckingShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0.292659, 0 )
+shape = SubResource( 2 )
+disabled = true
+
+[node name="Spatial" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.532905, 0 )
+
+[node name="Camera" type="Camera" parent="Spatial"]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.363447, 0 )
+mesh = SubResource( 3 )
+material/0 = null
