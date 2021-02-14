@@ -19,10 +19,10 @@ surfaces/0 = {
 "vertex_count": 24
 }
 
-[sub_resource type="SpatialMaterial" id=3]
+[sub_resource type="SpatialMaterial" id=4]
 albedo_texture = ExtResource( 1 )
 
-[sub_resource type="ConvexPolygonShape" id=4]
+[sub_resource type="ConvexPolygonShape" id=3]
 points = PoolVector3Array( -1, 0.125, -1, -1, -0.125, -1, 1, -0.125, -1, 1, 0.125, -1, -1, 0.125, 1, -1, -0.125, 1, 1, -0.125, 1, 1, 0.125, 1 )
 
 [node name="entity_2_func_group" type="KinematicBody"]
@@ -34,14 +34,7 @@ script = ExtResource( 2 )
 [node name="entity_2_mesh_instance" type="MeshInstance" parent="."]
 use_in_baked_light = true
 mesh = SubResource( 2 )
-material/0 = SubResource( 3 )
+material/0 = SubResource( 4 )
 
 [node name="entity_2_brush_0_collision_shape" type="CollisionShape" parent="."]
-shape = SubResource( 4 )
-
-[node name="Place" type="Spatial" parent="."]
-
-[node name="entity_2_mesh_instance2" type="MeshInstance" parent="Place"]
-use_in_baked_light = true
-mesh = SubResource( 2 )
-material/0 = SubResource( 3 )
+shape = SubResource( 3 )

@@ -17,24 +17,14 @@ time = 2.0
 direction = Vector3( 0, 0, -1 )
 speed = 2.0
 
-[node name="Place" parent="entity_27_func_group" index="2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.1208 )
-
 [node name="entity_2_func_group" parent="." instance=ExtResource( 7 )]
 time = 2.0
 direction = Vector3( 0, -1, 0 )
 speed = 1.0
 delayTime = 3.0
 
-[node name="Place" parent="entity_2_func_group" index="2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.9999, 0 )
-
 [node name="PivotPoint" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.5625, 2, -7 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.625, 3.06564, -8 )
-
-[editable path="entity_27_func_group"]
-
-[editable path="entity_2_func_group"]

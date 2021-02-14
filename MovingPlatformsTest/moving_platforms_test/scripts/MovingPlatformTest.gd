@@ -1,6 +1,8 @@
 extends KinematicBody
 
 export (float) var time = 5.0
+export (Vector3) var direction = Vector3(1,0,0)
+export (float) var speed = 1.5
 export (float) var delayTime = 1.5
 
 var places = []
@@ -28,13 +30,10 @@ func _ready():
 	delayUp = true
 	add_child(timer)
 	add_child(delay)
-	velocity = ($Place.global_transform.origin - global_transform.origin) / time
-	
-	for node in $Place.get_children():
-		node.queue_free()
+	velocity = direction.normalized() * speed
 	
 	places.append(global_transform.origin)
-	places.append($Place.global_transform.origin)
+	places.append(global_transform.origin + (direction.normalized() * speed * time))
 
 func timeUp():
 	timeUp = true
